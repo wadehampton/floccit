@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-resources :lists
-
   devise_for :users
+    resources :users, only: [:update]
+
+  resources :lists, except: [:index]
+
  
   get 'welcome/contact'
   get 'about' => 'welcome#about'
-
-  resources :lists, except: [:index]
 
   root to: 'welcome#index'
 
