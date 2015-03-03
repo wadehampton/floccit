@@ -1,7 +1,23 @@
-<%= form_for @lists do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+<h1>New List</h1>
 
-  <%= f.submit "Save" %>
-  <% end %>
+<div class="row">
+  <div class="col-md-4">
+    <p>Lists should be made available for everyone to do</p>
+    <ul>
+      <li>Don't miss anything.</li>
+      <li>Never stop searching.</li>
+    </ul>
+  </div>
+  <div class="col-md-8">
+    <%= form_for @list do |f| %>
+      <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control', placeholder: "Enter list title" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Save", class: 'btn btn-success' %>
+      </div>
+    <% end %>
+  </div>
+</div>
 

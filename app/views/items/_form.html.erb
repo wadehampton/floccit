@@ -1,0 +1,9 @@
+<h1>Items</h1>
+  <h4>Add new item.</h4><br/>
+  <h5>Body</h5>
+
+<%= form_for [list, list.items.new] do |f| %>
+  <%= f.text_area :body %><br/>
+  <%= f.submit %>
+<% end %>
+   

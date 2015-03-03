@@ -1,0 +1,19 @@
+<% list.items.each do |item| %>
+  <div><%= item.body %></div>
+
+  <% if current_user %>
+    <%= flash[:notice] = "Item successfully saved!" %>
+  <% else %>
+    <%= flash[:notice] = "Please sign in!" %>
+  <% end %>
+
+  <div class="media">
+    <%= link_to "#", class: 'pull-left' do %>
+      <%= image_tag(item.user) if item.user? %>
+    <% end %>
+    <div class="media-body">
+       <p><%= item.body %></p>
+     </div>
+   </div>
+
+<% end %>
