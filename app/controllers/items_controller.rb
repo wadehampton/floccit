@@ -1,11 +1,20 @@
 class ItemsController < ApplicationController
+
+  def show
+    @list = List.find(params[:list_id])
+    @item = Item.find(params[:id])
+  end
+
+  def new
+    @list = List.find(params[:list_id])
+    @item = Item.new
+  end
  
   def create
-    @list = List.find(list_params)
-    @item = Item.new(item_params)
-
-    @item.list = @list
+    @list = List.find(params[:list_id])
+    @item = @list.items.build(item_params)
     @item.user = current_user
+    @new_item = Item.new
 
       if @item.save
         flash[:notice] = "Item was saved successfully."

@@ -32,7 +32,7 @@ class ListsController < ApplicationController
   def update
     @list = List.find(params[:id])
 
-    if @list.update_attributes(params.require(:list).permit(:title, :description))
+    if @list.update(list_params)
       flash[:notice] = "List was updated."
       redirect_to @list
     else
@@ -58,5 +58,5 @@ end
 private
 
   def list_params
-     params.require(:list).permit(item_params)
+     params.require(:list).permit(:title)
   end

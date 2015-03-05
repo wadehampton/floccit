@@ -7,13 +7,6 @@
     <%= flash[:notice] = "Please sign in!" %>
   <% end %>
 
-  <div class="media">
-    <%= link_to "#", class: 'pull-left' do %>
-      <%= image_tag(item.user) if item.user? %>
-    <% end %>
-    <div class="media-body">
-       <p><%= item.body %></p>
-     </div>
-   </div>
+  
 
 <% end %>

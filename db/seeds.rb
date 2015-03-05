@@ -4,7 +4,6 @@ require 'faker'
  50.times do
    List.create!(
      title:  Faker::Lorem.sentence,
-     body:   Faker::Lorem.paragraph
    )
  end
  lists = List.all
